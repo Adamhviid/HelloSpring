@@ -12,7 +12,7 @@ public class Controllers {
     @ResponseBody
     public double IsItFriday() {
         DayCalculator test = new DayCalculator();
-        double result = test.formula(11,9,21,20);
+        double result = test.formula(13,9,21,20);
         
         return result;
     }
