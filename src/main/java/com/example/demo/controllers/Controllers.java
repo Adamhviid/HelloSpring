@@ -10,9 +10,9 @@ public class Controllers {
 
     @GetMapping("/friday")
     @ResponseBody
-    public double IsItFriday() {
+    public String IsItFriday() {
         DayCalculator test = new DayCalculator();
-        double result = test.formula(13,9,21,20);
+        String result = test.formula(11,9,21,20);
         
         return result;
     }

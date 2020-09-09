@@ -2,7 +2,7 @@ package com.example.demo.services;
 
 public class DayCalculator {
 
-    public int formula(int dayOfMonth, int month, int century, int year) {
+    public String formula(int dayOfMonth, int month, int century, int year) {
 
         int j = year / 100; //century
         int k = year % 100; //year
@@ -14,6 +14,10 @@ public class DayCalculator {
 
         int result = (int)d;
 
-        return result;
+        if (result == 5) {
+            return "Det er fredag b";
+        }
+
+        return "Det er ikke fredag b";
     }
 }
