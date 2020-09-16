@@ -5,15 +5,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class Controllers {
 
-    @GetMapping("/friday")
+    @GetMapping("/")
     @ResponseBody
     public String IsItFriday() {
         DayCalculator test = new DayCalculator();
-        String result = test.formula(11,9,21,20);
-        
+
+        LocalDateTime currentDate = LocalDateTime.now();
+
+        int day = currentDate.getDayOfMonth();
+        int month = currentDate.getMonthValue();
+        int year = currentDate.getYear();
+        int century = currentDate.getYear()%100;
+
+        String result = test.formula(day,month,century,year);
+
         return result;
     }
 }
